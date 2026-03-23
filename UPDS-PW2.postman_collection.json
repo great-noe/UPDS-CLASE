@@ -1,0 +1,252 @@
+{
+  "info": {
+    "_postman_id": "394784f1-bd6c-45cc-a0c6-598eb82c4446",
+    "name": "UPDS-PW2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32183297"
+  },
+  "item": [
+    {
+      "name": "TOKEN JWT KC",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "webapi-client",
+              "type": "text",
+              "uuid": "9a5171ce-d2e1-4dd4-b579-33da0f48167a"
+            },
+            {
+              "key": "username",
+              "value": "galbino",
+              "type": "text",
+              "uuid": "35d7f2de-d540-4407-a6f7-324b7660134a"
+            },
+            {
+              "key": "password",
+              "value": "Galbino123",
+              "type": "text",
+              "uuid": "77770c5e-a69d-4e98-b20f-62886c1e48d9"
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text",
+              "uuid": "919a0398-56b0-4b4d-bf5e-c45574f1c688"
+            },
+            {
+              "key": "client_secret",
+              "value": "J28nBXrdXm91R4v9VcIbG0iJ7SIoWwW9",
+              "type": "text",
+              "uuid": "5aff63e2-ae9d-46e5-9d9f-7a74308ac9c2"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8889/realms/pw2-clase5/protocol/openid-connect/token",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8889",
+          "path": [
+            "realms",
+            "pw2-clase5",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Sin JWT",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:7223/api/test/public",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7223",
+          "path": [
+            "api",
+            "test",
+            "public"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UnAuthorized",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{pw2-token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:7223/api/test/unauthorized",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7223",
+          "path": [
+            "api",
+            "test",
+            "unauthorized"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PROTECTED",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{pw2-token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:7223/api/test/protected",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7223",
+          "path": [
+            "api",
+            "test",
+            "protected"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin Solo",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{pw2-token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:7223/api/test/admin",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7223",
+          "path": [
+            "api",
+            "test",
+            "admin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{pw2-token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"andres.albino\",\r\n  \"email\": \"andres.albino@test.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7223/api/test/save-user",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7223",
+          "path": [
+            "api",
+            "test",
+            "save-user"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "pw2-token",
+      "value": ""
+    }
+  ]
+}

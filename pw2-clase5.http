@@ -1,0 +1,6 @@
+@pw2_clase5_HostAddress = http://localhost:5111
+
+GET {{pw2_clase5_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

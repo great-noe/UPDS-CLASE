@@ -1,0 +1,68 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDEs
+.vscode
+.vs
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Dependencies
+node_modules
+bin
+obj
+
+# Environment files
+.env
+.env.local
+.env.*.local
+appsettings.Development.json
+appsettings.Staging.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Cache
+.cache
+.eslintcache
+
+# Build outputs
+dist
+build
+coverage
+
+# Testing
+.nyc_output
+*.lcov
+
+# Package managers
+package-lock.json
+yarn.lock
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+
+# Documentación innecesaria
+README.md
+LICENSE
+CHANGELOG.md
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+*.swp
